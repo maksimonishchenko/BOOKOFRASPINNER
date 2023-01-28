@@ -49,19 +49,24 @@ to goto->start
 Label>start
 
 Label>setLines
+
 let>halfbsizex=44
+
 let>line9=847
+
 Random>5,randomresult
 
 Let>halfbsizex=halfbsizex*randomresult
+
 Let>line9=line9-halfbsizex
 
 MouseMove>line9,630
+
 LClick
 
 Wait>0.5179
 
-Wait>0.179
+Wait>0.5179
 
 MouseMove>1014,629
 
@@ -69,11 +74,12 @@ LClick
 
 MouseMove>1014,630
 
-Wait>0.327
+Wait>0.5327
 
 LClick
 
-Wait>0.5
+Wait>0.75
+
 let>grabbed=0
 
 ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
@@ -94,7 +100,9 @@ Endif
 goto>start
 
 Label>btc
+
 Wait>3.5179
+
 let>raise = 0
 
 ScreenCapture>1066,522,1089,542,%TEMP_DIR%\screenrect.bmp
@@ -111,8 +119,6 @@ If>NumFound>0
   Let>raise=3
 Endif
 
-
-
 ScreenCapture>1074,523,1090,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_12.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
@@ -128,31 +134,36 @@ If>NumFound>0
   Let>raise=1
 Endif
 
-
 //Message grabbed %grabbed%
 If>grabbed>0.5
   goto>raiseFixed
 Endif
 
 Label>resetRaise
+
 MouseMove>949,630
+
 LClick
-Wait>0.5179
+
+Wait>0.75179
 
 MouseMove>908,630
+
 LClick
-Wait>0.5179
+
+Wait>0.75179
 
 //goto>setLines
 
 Label>raiseFixed
+
 MouseMove>913,630
 
 Let>raise=raise-1
 
 If>raise>0
   LClick
-  Wait>0.5179
+  Wait>0.75179
 Endif
 
 Let>raise=raise-1
@@ -186,8 +197,6 @@ Endif
 //Let>raise=raise-1
 
 //place set lines diagonally random shift...
-
-
 //
 goto>start
 
