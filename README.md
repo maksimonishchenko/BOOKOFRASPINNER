@@ -74,18 +74,23 @@ Label>start
 //DeleteFile>c:\book of ra\screenrect3.bmp
 //DeleteFile>c:\book of ra\screenrect4.bmp
 
+
+
+
 GetRectCheckSum>584,578,695,592,clip
+
 //check summ credit 9 fields - length empty
+
 Let>max=147434936
 
-Let>bool=>
+Let>bool==
+
 Let>condition=%clip%%bool%%max%
+
 Let>Test={condition}
 
 If>Test=TRUE
- //MessageModal>greater
-Else
- MouseMove>512,617
+  MouseMove>512,617
   LClick
   Wait>12
   MouseMove>1032,589
@@ -146,13 +151,9 @@ ScreenCapture>760,578,912,594,C:\book of ra\screenrectwin.bmp
 //Find and Left Click Center of
 FindImagePos>C:\book of ra\win.bmp,C:\book of ra\screenrectwin.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Message Win
   goto>start
   LClick
 Endif
-
-
-
 
 
 Wait>0.15
@@ -161,7 +162,6 @@ ScreenCapture>740,573,952,597,C:\book of ra\screenrectwon.bmp
 //Find and Left Click Center of 
 FindImagePos>C:\book of ra\won.bmp,C:\book of ra\screenrectwon.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  MESSAGE "ЗАСЧИТАНО"
   let>grabbed=1
   goto>btc
 Endif
@@ -172,42 +172,42 @@ Label>btc
 
 Let>raiseNum=0
 
-ScreenCapture>1067,522,1103,543,C:\book of ra\screenrect1.bmp
-//Find and Left Click Center of
-FindImagePos>C:\book of ra\bet10.bmp,C:\book of ra\screenrect1.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+ScreenCapture>1062,520,1102,542,C:\book of ra\screenrect10.bmp
+//Find and Left Click Center of 
+FindImagePos>C:\book of ra\image_10.bmp,C:\book of ra\screenrect10.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Message "current bet x10 grabbed" %Grabbed%
+  MessageModal "current bet x10 grabbed" %Grabbed%
   let>raiseNum=6
 Endif
 
-ScreenCapture>1077,523,1103,544,C:\book of ra\screenrect2.bmp
-//Find and Left Click Center of
-FindImagePos>C:\book of ra\bet20.bmp,C:\book of ra\screenrect2.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+ScreenCapture>1077,522,1105,541,C:\book of ra\screenrect20.bmp
+//Find and Left Click Center of 
+FindImagePos>C:\book of ra\image_11.bmp,C:\book of ra\screenrect20.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Message "current bet x20 grabbed" %Grabbed%
-  raiseNum=6
+  MessageModal "current bet x20 grabbed" %Grabbed%
+  let>raiseNum=6
 Endif
 
-
-ScreenCapture>1077,522,1104,543,C:\book of ra\screenrect3.bmp
-//Find and Left Click Center of
-FindImagePos>C:\book of ra\bet50.bmp,C:\book of ra\screenrect3.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+ScreenCapture>1077,520,1102,542,C:\book of ra\screenrect50.bmp
+//Find and Left Click Center of 
+FindImagePos>C:\book of ra\image_12.bmp,C:\book of ra\screenrect50.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Message "current bet x50 grabbed" %Grabbed%
-  let>raiseNum=4
+  MessageModal "current bet x50 grabbed" %Grabbed%
+  let>raiseNum=2
 Endif
 
-ScreenCapture>1064,522,1090,543,C:\book of ra\screenrect4.bmp
-//Find and Left Click Center of
-FindImagePos>C:\book of ra\bet200.bmp,C:\book of ra\screenrect4.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+ScreenCapture>1060,520,1104,542,C:\book of ra\screenrect200.bmp
+//Find and Left Click Center of 
+FindImagePos>C:\book of ra\image_13.bmp,C:\book of ra\screenrect200.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Message "current bet x200 grabbed" %Grabbed%
+  MessageModal "current bet x200 grabbed" %Grabbed%
   let>raiseNum=5
 Endif
 
 
 //Message grabbed %grabbed%
 If>grabbed>0.5
+  MessageModal "raisefixed raiseNum" %raiseNum% " grabbed " %grabbed%
   goto>raiseFixed
 Endif
 
@@ -231,9 +231,7 @@ Label>raiseFixed
 
 MouseMove>913,630
 
-//Let>raiseNum=raiseNum-1
-//Message %raiseNum%
-If>raise>0
+If>raiseNum>0
   LClick
   Wait>0.75179
 Endif
@@ -279,12 +277,6 @@ If>raiseNum>0
   LClick
   Wait>0.5179
 Endif
-
-
-
-//Let>raiseNum=raiseNum-1
-
-//place set lines diagonally random shift...
 
 goto>start
 
