@@ -48,33 +48,24 @@ to goto->start
 
 Label>start
 
-//screen resolution 1600x900 windows 10 pro Build 19041.vb_release.191206-1406
-ScreenCapture>584,574,697,595,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_15.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
-If>NumFound>0
+GetRectCheckSum>584,578,695,592,nChecksum
+
+//Message %nChecksum%
+
+if>nChecksum==147434936
   MouseMove>512,617
   LClick
-  Wait>10
-  MouseMove>1032,589
-  LClick
-  Press b
-  Press o
-  Press o
-  Press k
-  Press Space
-  Press o
-  Press f
-  Press Space
-  Press r
-  Press a
-  MouseMove>1061,594
-  Wait>1
-  MouseMove>504,646
-  LClick
   Wait>12
-  //nominal
-  MouseMove>496,654
+  MouseMove>1032,589
+  Wait>0.12
+  LClick
+  Let>SK_DELAY=0.1
+  SendText>Book of ra
+  Wait>1.12
+  MouseMove>495,649
+  LClick
+  Wait>11
+  MouseMove>495,652
   LClick
   Wait>1
   LClick
@@ -84,50 +75,6 @@ If>NumFound>0
   LClick
   Wait>1
 Endif
-
-
-
-
-Label>start
-
-ScreenCapture>700,575,585,596,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_1.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
-If>NumFound>0
-  MouseMove>512,617
-  LClick
-  Wait>10
-  MouseMove>1032,589
-  LClick
-  Press b
-  Press o
-  Press o
-  Press k
-  Press Space
-  Press o
-  Press f
-  Press Space
-  Press r
-  Press a
-  MouseMove>1061,594
-  Wait>1
-  MouseMove>504,646
-  LClick
-  Wait>12
-  //nominal
-  MouseMove>496,654
-  LClick
-  Wait>1
-  LClick
-  Wait>1
-  LClick
-  Wait>1
-  LClick
-  Wait>1
-Endif
-
-
-
 
 Label>setLines
 
@@ -170,10 +117,6 @@ If>NumFound>0
   goto>start
   LClick
 Endif
-
-
-  
-
 
 Wait>0.15
 
@@ -299,14 +242,10 @@ If>raiseNum>0
   Wait>0.5179
 Endif
 
-
-
 //Let>raiseNum=raiseNum-1
 
 //place set lines diagonally random shift...
-
-
-//Dedicated to Linuks Torvalds
+//dedicated to me
 goto>start
 
 
