@@ -48,12 +48,17 @@ to goto->start
 
 Label>start
 
-GetRectCheckSum>584,578,695,592,nChecksum
+GetRectCheckSum>584,578,695,592,clip
+Let>max=147434936
 
-//Message %nChecksum%
+Let>bool=>
+Let>condition=%clip%%bool%%max%
+Let>Test={condition}
 
-if>nChecksum==147434936
-  MouseMove>512,617
+If>Test=TRUE
+ //MessageModal>greater
+Else
+ MouseMove>512,617
   LClick
   Wait>12
   MouseMove>1032,589
@@ -74,7 +79,7 @@ if>nChecksum==147434936
   Wait>1
   LClick
   Wait>1
-Endif
+EndIf
 
 Label>setLines
 
@@ -111,17 +116,21 @@ Wait>1.75
 let>grabbed=0
 
 ScreenCapture>760,578,912,594,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
+//Find and Left Click Center of
 FindImagePos>%BMP_DIR%\image_2.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   goto>start
   LClick
 Endif
 
+
+
+
+
 Wait>0.15
 
 ScreenCapture>752,577,911,597,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
+//Find and Left Click Center of
 FindImagePos>%BMP_DIR%\image_3.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   goto>btc
@@ -139,14 +148,14 @@ Let>raiseNum=0
 
 
 ScreenCapture>1067,522,1103,541,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
+//Find and Left Click Center of
 FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=6
 Endif
- 
+
 ScreenCapture>1077,523,1103,540,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
+//Find and Left Click Center of
 FindImagePos>%BMP_DIR%\image_5.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   raiseNum=6
@@ -154,14 +163,14 @@ Endif
 
 
 ScreenCapture>1077,522,1104,541,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
+//Find and Left Click Center of
 FindImagePos>%BMP_DIR%\image_6.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=4
 Endif
 
 ScreenCapture>1064,522,1090,542,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
+//Find and Left Click Center of
 FindImagePos>%BMP_DIR%\image_7.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=1
@@ -242,11 +251,16 @@ If>raiseNum>0
   Wait>0.5179
 Endif
 
+
+
 //Let>raiseNum=raiseNum-1
 
 //place set lines diagonally random shift...
-//dedicated to me
+// dedicated to Bob Marley and Damyan Marley aint shieeeet
 goto>start
+
+
+
 
 
 
