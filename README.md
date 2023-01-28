@@ -1,8 +1,13 @@
 OPENSOURCE
+
 ОТРЫТОЕ ПРОГГРАММНОЕ ОБЕСПЕЧЕНИЕ
+
 ИСПОЛЬЗОВАТЬ НА СВОЙ СТРАХ И РИСК
+
 АВТОР ЗА ЛЮБЫЕ ПОСЛЕДСТВИЯ ИСПОЛЬЗОВАНИЯ ПРОГРАММЫ ОТВЕТСТВЕННОСТИ НЕ НЕСЁТ
+
 ПРОГРАММА ПРЕДОСТАВЛЯЕТСЯ КАК ЕСТЬ БЕЗ КАКИХ ЛИБО ГАРАНТИЙ НА КОРРЕКТНУЮ ИЛИ ПРАВИЛЬНУЮ РАБОТУ 
+
 
 TO USE APPROPRIATELY YOU MUST CHANGE IMAGES EVERY USE OF THIS HIT
 Для того чтобы использовалось по назначению необходимо переопределить картинки каждое использование этого фирма
@@ -23,7 +28,7 @@ En....
 
 REPLACE FIRST BLOCK with 2.bmp image captured on screen
 Замените первый блок распознавания картинок на картинку 2.bmp схваченную на экране при помощи функции в программе macro schedule recorder
-Script->Image Recognition-> Find position->What to look->Capture An Image->ВЫИГРЫШ->Where to look->Search within rectangle->Draw->Select Area bmp within->What to do left Click->Where Center of image->Advanced correlation 0.6 worked in my tests insert code 
+Script->Image Recognition-> Find position->What to look->Capture An Image->ВЫИГРЫШ->Where to look->Search within rectangle->Draw->Select Area bmp within->What to do left Click->Where Center of image->Advanced correlation 0.6 worked in my tests WaitScreenImageTimeout 1 sec worked out in my tests > insert code 
 
 change 
  MouseMove>{%XArr_0%+678},{%YArr_0%+580}
@@ -33,7 +38,8 @@ to goto->start
 
 REPLACE SECOND BLOCK with 1.bmp image captured on screen
 Замените второй блок распознавания картинок на картинку 1.bmp схваченную на экране при помощи функции в программе macro schedule recorder
-Script->Image Recognition-> Find position->What to look->Capture An Image->ЗАСЧИТАНО->Where to look->Search within rectangle->Draw->Select Area bmp within->What to do left Click->Where Center of image->Advanced correlation 0.6 worked in my tests insert code
+Script->Image Recognition-> Find position->What to look->Capture An Image->ЗАСЧИТАНО->Where to look->Search within rectangle->Draw->Select Area bmp within->What to do left Click->Where Center of image->Advanced correlation 0.6 worked in my tests WaitScreenImageTimeout 1 sec worked out in my tests -> insert code 
+
 change 
  MouseMove>{%XArr_0%+678},{%YArr_0%+580}
   LClick
