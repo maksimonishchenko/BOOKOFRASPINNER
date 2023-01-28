@@ -121,7 +121,7 @@ ScreenCapture>1064,523,1090,543,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_11.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>raiseNum=3
+  let>raiseNum=5
 Endif
 
 
@@ -130,7 +130,7 @@ ScreenCapture>1074,523,1090,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_12.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>raiseNum=2
+  let>raiseNum=7
 Endif
 
 
@@ -148,23 +148,17 @@ If>grabbed>0.5
 Endif
 
 Label>resetRaise
-
 MouseMove>949,630
-
 LClick
-
 Wait>0.75179
 
 MouseMove>908,630
-
 LClick
-
 Wait>0.75179
 
 //goto>setLines
 
 Label>raiseFixed
-
 MouseMove>913,630
 
 //Let>raiseNum=raiseNum-1
@@ -210,5 +204,5 @@ Endif
 //
 goto>start
 
-
+//dedicated to author
 
