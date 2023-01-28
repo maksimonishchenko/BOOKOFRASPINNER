@@ -49,6 +49,12 @@ to goto->start
 
 Label>start
 
+Random>5,randomresult
+
+let>halfbsizex=44
+
+let>line9=847
+
 Wait>0.179
 
 MouseMove>1014,629
@@ -63,29 +69,33 @@ LClick
 
 Wait>0.5
 
-ScreenCapture>763,570,954,595,%TEMP_DIR%\screenrect.bmp
-
+ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_2.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
-
 If>NumFound>0
-
   goto>start
-  
 Endif
 
-ScreenCapture>783,574,931,595,%TEMP_DIR%\screenrect.bmp
-
-FindImagePos>%BMP_DIR%\image_1.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
-
+ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-
-   goto>start
-   
+  goto>start
 Endif
 
-Wait>3.5179 
+Wait>3.5179
 
 MouseMove>913,630
+
+LClick
+
+Wait>0.5179
+
+Let>halfbsizex=halfbsizex*randomresult
+
+Let>line9=line9-halfbsizex
+
+MouseMove>line9,630
 
 LClick
 
