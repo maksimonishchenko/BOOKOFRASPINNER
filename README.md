@@ -88,6 +88,47 @@ Endif
 
 
 
+Label>start
+
+ScreenCapture>700,575,585,596,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_1.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  MouseMove>512,617
+  LClick
+  Wait>10
+  MouseMove>1032,589
+  LClick
+  Press b
+  Press o
+  Press o
+  Press k
+  Press Space
+  Press o
+  Press f
+  Press Space
+  Press r
+  Press a
+  MouseMove>1061,594
+  Wait>1
+  MouseMove>504,646
+  LClick
+  Wait>12
+  //nominal
+  MouseMove>496,654
+  LClick
+  Wait>1
+  LClick
+  Wait>1
+  LClick
+  Wait>1
+  LClick
+  Wait>1
+Endif
+
+
+
+
 Label>setLines
 
 let>halfbsizex=44
@@ -122,25 +163,27 @@ Wait>1.75
 
 let>grabbed=0
 
-
-
-ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
-If>NumFound>0
-  goto>start
-Endif
-
-Wait>0.15
-
-ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>760,578,912,594,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_2.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>grabbed=1
-  goto>btc
+  goto>start
+  LClick
 Endif
 
+
+  
+
+
+Wait>0.15
+
+ScreenCapture>752,577,911,597,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_3.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  goto>btc
+  LClick
+Endif
 
 goto>start
 
@@ -150,31 +193,33 @@ Wait>3.5179
 
 Let>raiseNum=0
 
-ScreenCapture>1066,522,1089,542,%TEMP_DIR%\screenrect.bmp
+
+
+ScreenCapture>1067,522,1103,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_10.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=6
 Endif
-//1 5 7 1 to raise bet row sequence 7 6 4 1 to low  
-ScreenCapture>1064,523,1090,543,%TEMP_DIR%\screenrect.bmp
+ 
+ScreenCapture>1077,523,1103,540,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_11.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_5.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>raiseNum=6
+  raiseNum=6
 Endif
 
 
-ScreenCapture>1075,520,1090,541,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1077,522,1104,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_14.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_6.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=4
 Endif
 
-ScreenCapture>1062,522,1081,541,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1064,522,1090,542,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_13.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_7.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=1
 Endif
@@ -261,7 +306,7 @@ Endif
 //place set lines diagonally random shift...
 
 
-//Dedicated to Bill Gates 
+//Dedicated to Linuks Torvalds
 goto>start
 
 
