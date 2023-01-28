@@ -48,6 +48,7 @@ to goto->start
 
 Label>start
 
+//screen resolution 1600x900 windows 10 pro Build 19041.vb_release.191206-1406
 ScreenCapture>584,574,697,595,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_15.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
@@ -120,6 +121,8 @@ LClick
 Wait>1.75
 
 let>grabbed=0
+
+
 
 ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
@@ -258,8 +261,9 @@ Endif
 //place set lines diagonally random shift...
 
 
-//dedicated to Sergey Genadyevich Verchenko
+//Dedicated to Bill Gates 
 goto>start
+
 
 
 
