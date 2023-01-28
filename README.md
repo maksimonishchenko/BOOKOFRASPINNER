@@ -49,19 +49,14 @@ to goto->start
 Label>start
 
 Label>setLines
-
 let>halfbsizex=44
-
 let>line9=847
-
 Random>5,randomresult
 
 Let>halfbsizex=halfbsizex*randomresult
-
 Let>line9=line9-halfbsizex
 
 MouseMove>line9,630
-
 LClick
 
 Wait>0.5179
@@ -79,7 +74,6 @@ Wait>0.327
 LClick
 
 Wait>0.5
-
 let>grabbed=0
 
 ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
@@ -153,6 +147,8 @@ Wait>0.5179
 
 Label>raiseFixed
 MouseMove>913,630
+
+Let>raise=raise-1
 
 If>raise>0
   LClick
