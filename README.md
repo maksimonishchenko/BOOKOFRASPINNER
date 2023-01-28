@@ -46,12 +46,25 @@ change
 to goto->start
 на goto->start
 
-
 Label>start
-Random>5,randomresult
+
+Label>setLines
 
 let>halfbsizex=44
+
 let>line9=847
+
+Random>5,randomresult
+
+Let>halfbsizex=halfbsizex*randomresult
+
+Let>line9=line9-halfbsizex
+
+MouseMove>line9,630
+
+LClick
+
+Wait>0.5179
 
 Wait>0.179
 
@@ -86,36 +99,40 @@ Endif
 Label>btc
 Wait>3.5179
 let>raise = 0
-ScreenCapture>1069,516,1107,541,%TEMP_DIR%\screenrect.bmp
+
+ScreenCapture>1066,522,1089,542,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_7.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_10.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Let>raise=1
 Endif
 
-
-ScreenCapture>1064,515,1107,542,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1064,523,1090,543,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_6.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_11.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Let>raise=3
 Endif
 
-ScreenCapture>1067,517,1104,543,%TEMP_DIR%\screenrect.bmp
+
+
+ScreenCapture>1074,523,1090,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_8.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_12.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Let>raise=2
 Endif
 
-ScreenCapture>1066,520,1102,540,%TEMP_DIR%\screenrect.bmp
+
+ScreenCapture>1062,522,1081,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_9.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_13.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Let>raise=1
 Endif
 
-Message grabbed %grabbed%
+
+//Message grabbed %grabbed%
 If>grabbed>0.5
   goto>raiseFixed
 Endif
@@ -129,7 +146,7 @@ MouseMove>908,630
 LClick
 Wait>0.5179
 
-goto>setLines
+//goto>setLines
 
 Label>raiseFixed
 MouseMove>913,630
@@ -169,19 +186,10 @@ Endif
 
 //Let>raise=raise-1
 
+//place set lines diagonally random shift...
 
-Label>setLines
 
-Let>halfbsizex=halfbsizex*randomresult
-
-Let>line9=line9-halfbsizex
-
-MouseMove>line9,630
-
-LClick
-
-Wait>0.5179
-
+//
 goto>start
 
 
