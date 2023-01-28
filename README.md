@@ -51,18 +51,27 @@ to goto->start
 на goto->start
 
 Label>start
+//продаю exe для вашего windows pc произведу насройку и установку программного обеспечения бота для любых 
+//слотовых аппаратов и других компьютерных игр обращаться telegram +79104784319 
+
 //перед запуском скрипта в macro scheduler скопируйте все картинки
 //по соответствующим путям файлов указанные в строках
 //с инструкцией FindImagePos....c:\book of ra....
 //если надо - поменяйте
 //copy all images from repository to corresponding file path
-//i.e. c:\book of ra\won.bmp 
-//c:\book of ra\win.bmp
-//c:\book of ra\bet10.bmp
-//c:\book of ra\bet20.bmp
-//c:\book of ra\bet50.bmp
-//c:\book of ra\bet200.bmp
+//i.e. c:\book of ra\won.bmp 103pix 18pix
+//c:\book of ra\win.bmp 91pix 17pix
+//c:\book of ra\bet10.bmp 26pix 21pix
+//c:\book of ra\bet20.bmp 24pix 18pix
+//c:\book of ra\bet50.bmp 25pix 20pix
+//c:\book of ra\bet200.bmp 23pix 20pix
 
+//DeleteFile>c:\book of ra\screenrectwin.bmp
+//DeleteFile>c:\book of ra\screenrectwon.bmp
+//DeleteFile>c:\book of ra\screenrect1.bmp
+//DeleteFile>c:\book of ra\screenrect2.bmp
+//DeleteFile>c:\book of ra\screenrect3.bmp
+//DeleteFile>c:\book of ra\screenrect4.bmp
 
 GetRectCheckSum>584,578,695,592,clip
 //check summ credit 9 fields - length empty
@@ -132,9 +141,9 @@ Wait>1.75
 
 let>grabbed=0
 
-ScreenCapture>760,578,912,594,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>760,578,912,594,C:\book of ra\screenrectwin.bmp
 //Find and Left Click Center of
-FindImagePos>C:\book of ra\win.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\win.bmp,C:\book of ra\screenrectwin.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Message Win
   goto>start
@@ -147,10 +156,12 @@ Endif
 
 Wait>0.15
 
-ScreenCapture>740,573,952,597,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>740,573,952,597,C:\book of ra\screenrectwon.bmp
 //Find and Left Click Center of 
-FindImagePos>C:\book of ra\won.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\won.bmp,C:\book of ra\screenrectwon.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
+  MESSAGE "ЗАСЧИТАНО"
+  let>grabbed=1
   goto>btc
 Endif
 
@@ -158,39 +169,36 @@ goto>start
 
 Label>btc
 
-Wait>3.5179
-
 Let>raiseNum=0
 
-
-ScreenCapture>1067,522,1103,541,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1067,522,1103,543,C:\book of ra\screenrect1.bmp
 //Find and Left Click Center of
-FindImagePos>C:\book of ra\bet10.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet10.bmp,C:\book of ra\screenrect1.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Message "current bet x10 grabbed" %Grabbed%
   let>raiseNum=6
 Endif
 
-ScreenCapture>1077,523,1103,540,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1077,523,1103,544,C:\book of ra\screenrect2.bmp
 //Find and Left Click Center of
-FindImagePos>C:\book of ra\bet20.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet20.bmp,C:\book of ra\screenrect2.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Message "current bet x20 grabbed" %Grabbed%
   raiseNum=6
 Endif
 
 
-ScreenCapture>1077,522,1104,541,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1077,522,1104,543,C:\book of ra\screenrect3.bmp
 //Find and Left Click Center of
-FindImagePos>C:\book of ra\bet50.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet50.bmp,C:\book of ra\screenrect3.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Message "current bet x50 grabbed" %Grabbed%
   let>raiseNum=4
 Endif
 
-ScreenCapture>1064,522,1090,542,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1064,522,1090,543,C:\book of ra\screenrect4.bmp
 //Find and Left Click Center of
-FindImagePos>C:\book of ra\bet200.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet200.bmp,C:\book of ra\screenrect4.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Message "current bet x200 grabbed" %Grabbed%
   let>raiseNum=1
@@ -278,8 +286,5 @@ Endif
 //place set lines diagonally random shift...
 
 goto>start
-
-//dedicated to 2pac Amaru Shakur 
-
 
 
