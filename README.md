@@ -82,6 +82,8 @@ Wait>1.75
 
 let>grabbed=0
 
+
+
 ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
@@ -99,6 +101,7 @@ If>NumFound>0
   goto>btc
 Endif
 
+
 goto>start
 
 Label>btc
@@ -111,14 +114,14 @@ ScreenCapture>1066,522,1089,542,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_10.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>raiseNum=1
+  let>raiseNum=6
 Endif
-
+//1 5 7 1 to raise bet row sequence 7 6 4 1 to low  
 ScreenCapture>1064,523,1090,543,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_11.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>raiseNum=5
+  let>raiseNum=6
 Endif
 
 
@@ -126,7 +129,7 @@ ScreenCapture>1075,520,1090,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_14.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  let>raiseNum=7
+  let>raiseNum=4
 Endif
 
 ScreenCapture>1062,522,1081,541,%TEMP_DIR%\screenrect.bmp
@@ -163,7 +166,7 @@ Label>raiseFixed
 MouseMove>913,630
 
 //Let>raiseNum=raiseNum-1
-Message %raiseNum%
+//Message %raiseNum%
 If>raise>0
   LClick
   Wait>0.75179
@@ -223,3 +226,4 @@ goto>start
 
 
 
+//lower to round round baby ground found 
