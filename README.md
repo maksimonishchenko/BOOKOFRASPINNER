@@ -48,11 +48,9 @@ to goto->start
 
 
 Label>start
-
 Random>5,randomresult
 
 let>halfbsizex=44
-
 let>line9=847
 
 Wait>0.179
@@ -68,12 +66,14 @@ Wait>0.327
 LClick
 
 Wait>0.5
+let>grabbed=0
 
 ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_2.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  goto>start
+  let>grabbed=1
+  goto>btc
 Endif
 
 ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
@@ -83,13 +83,94 @@ If>NumFound>0
   goto>start
 Endif
 
+Label>btc
 Wait>3.5179
+let>raise = 0
+ScreenCapture>1069,516,1107,541,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_7.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  Let>raise=1
+Endif
 
+
+ScreenCapture>1064,515,1107,542,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_6.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  Let>raise=3
+Endif
+
+ScreenCapture>1067,517,1104,543,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_8.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  Let>raise=2
+Endif
+
+ScreenCapture>1066,520,1102,540,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_9.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  Let>raise=1
+Endif
+
+Message grabbed %grabbed%
+If>grabbed>0.5
+  goto>raiseFixed
+Endif
+
+Label>resetRaise
+MouseMove>949,630
+LClick
+Wait>0.5179
+
+MouseMove>908,630
+LClick
+Wait>0.5179
+
+goto>setLines
+
+Label>raiseFixed
 MouseMove>913,630
 
-LClick
+If>raise>0
+  LClick
+  Wait>0.5179
+Endif
 
-Wait>0.5179
+Let>raise=raise-1
+
+If>raise>0
+  LClick
+  Wait>0.5179
+Endif
+
+Let>raise=raise-1
+
+If>raise>0
+  LClick
+  Wait>0.5179
+Endif
+
+Let>raise=raise-1
+
+If>raise>0
+  LClick
+  Wait>0.5179
+Endif
+
+Let>raise=raise-1
+
+If>raise>0
+  LClick
+  Wait>0.5179
+Endif
+
+//Let>raise=raise-1
+
+
+Label>setLines
 
 Let>halfbsizex=halfbsizex*randomresult
 
