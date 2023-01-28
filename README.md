@@ -74,13 +74,24 @@ LClick
 
 MouseMove>1014,630
 
-Wait>0.5327
+Wait>0.2327
 
 LClick
 
-Wait>0.75
+Wait>1.75
 
 let>grabbed=0
+
+
+
+ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  goto>start
+Endif
+
+Wait>0.15
 
 ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
@@ -90,12 +101,6 @@ If>NumFound>0
   goto>btc
 Endif
 
-ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
-If>NumFound>0
-  goto>start
-Endif
 
 goto>start
 
@@ -103,27 +108,29 @@ Label>btc
 
 Wait>3.5179
 
-let>raise = 0
+Let>raiseNum=0
 
 ScreenCapture>1066,522,1089,542,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_10.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Let>raise=1
+  let>raiseNum=1
 Endif
 
 ScreenCapture>1064,523,1090,543,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_11.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Let>raise=3
+  let>raiseNum=3
 Endif
+
+
 
 ScreenCapture>1074,523,1090,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_12.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Let>raise=2
+  let>raiseNum=2
 Endif
 
 
@@ -131,8 +138,9 @@ ScreenCapture>1062,522,1081,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_13.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
-  Let>raise=1
+  let>raiseNum=1
 Endif
+
 
 //Message grabbed %grabbed%
 If>grabbed>0.5
@@ -159,44 +167,46 @@ Label>raiseFixed
 
 MouseMove>913,630
 
-Let>raise=raise-1
-
+//Let>raiseNum=raiseNum-1
+Message %raiseNum%
 If>raise>0
   LClick
   Wait>0.75179
 Endif
 
-Let>raise=raise-1
+let>raiseNum=raiseNum-1
 
-If>raise>0
+If>raiseNum>0
   LClick
   Wait>0.5179
 Endif
 
-Let>raise=raise-1
+let>raiseNum=raiseNum-1
 
-If>raise>0
+If>raiseNum>0
   LClick
   Wait>0.5179
 Endif
 
-Let>raise=raise-1
+let>raiseNum=raiseNum-1
 
-If>raise>0
+If>raiseNum>0
   LClick
   Wait>0.5179
 Endif
 
-Let>raise=raise-1
+let>raiseNum=raiseNum-1
 
-If>raise>0
+If>raiseNum>0
   LClick
   Wait>0.5179
 Endif
 
-//Let>raise=raise-1
+//Let>raiseNum=raiseNum-1
 
 //place set lines diagonally random shift...
+
+
 //
 goto>start
 
