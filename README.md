@@ -48,6 +48,45 @@ to goto->start
 
 Label>start
 
+ScreenCapture>584,574,697,595,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>%BMP_DIR%\image_15.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+If>NumFound>0
+  MouseMove>512,617
+  LClick
+  Wait>10
+  MouseMove>1032,589
+  LClick
+  Press b
+  Press o
+  Press o
+  Press k
+  Press Space
+  Press o
+  Press f
+  Press Space
+  Press r
+  Press a
+  MouseMove>1061,594
+  Wait>1
+  MouseMove>504,646
+  LClick
+  Wait>12
+  //nominal
+  MouseMove>496,654
+  LClick
+  Wait>1
+  LClick
+  Wait>1
+  LClick
+  Wait>1
+  LClick
+  Wait>1
+Endif
+
+
+
+
 Label>setLines
 
 let>halfbsizex=44
@@ -81,8 +120,6 @@ LClick
 Wait>1.75
 
 let>grabbed=0
-
-
 
 ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
@@ -221,9 +258,8 @@ Endif
 //place set lines diagonally random shift...
 
 
-//
+//dedicated to Sergey Genadyevich Verchenko
 goto>start
 
 
 
-//lower to round round baby ground found 
