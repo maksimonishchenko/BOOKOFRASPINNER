@@ -47,8 +47,21 @@ to goto->start
 на goto->start
 
 Label>start
+//перед запуском скрипта в macro scheduler скопируйте все картинки
+//по соответствующим путям файлов указанные в строках
+//с инструкцией FindImagePos....c:\book of ra....
+//если надо - поменяйте
+//copy all images from repository to corresponding file path
+//i.e. c:\book of ra\won.bmp 
+//c:\book of ra\win.bmp
+//c:\book of ra\bet10.bmp
+//c:\book of ra\bet20.bmp
+//c:\book of ra\bet50.bmp
+//c:\book of ra\bet200.bmp
+
 
 GetRectCheckSum>584,578,695,592,clip
+//check summ credit 9 fields - length empty
 Let>max=147434936
 
 Let>bool=>
@@ -107,7 +120,7 @@ LClick
 
 MouseMove>1014,630
 
-Wait>0.2327
+Wait>0.05127
 
 LClick
 
@@ -117,8 +130,9 @@ let>grabbed=0
 
 ScreenCapture>760,578,912,594,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of
-FindImagePos>%BMP_DIR%\image_2.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\win.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
+  Message Win
   goto>start
   LClick
 Endif
@@ -129,12 +143,11 @@ Endif
 
 Wait>0.15
 
-ScreenCapture>752,577,911,597,%TEMP_DIR%\screenrect.bmp
-//Find and Left Click Center of
-FindImagePos>%BMP_DIR%\image_3.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+ScreenCapture>740,573,952,597,%TEMP_DIR%\screenrect.bmp
+//Find and Left Click Center of 
+FindImagePos>C:\book of ra\won.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   goto>btc
-  LClick
 Endif
 
 goto>start
@@ -146,33 +159,36 @@ Wait>3.5179
 Let>raiseNum=0
 
 
-
 ScreenCapture>1067,522,1103,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of
-FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet10.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
+  Message "current bet x10 grabbed" %Grabbed%
   let>raiseNum=6
 Endif
 
 ScreenCapture>1077,523,1103,540,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of
-FindImagePos>%BMP_DIR%\image_5.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet20.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
+  Message "current bet x20 grabbed" %Grabbed%
   raiseNum=6
 Endif
 
 
 ScreenCapture>1077,522,1104,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of
-FindImagePos>%BMP_DIR%\image_6.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet50.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
+  Message "current bet x50 grabbed" %Grabbed%
   let>raiseNum=4
 Endif
 
 ScreenCapture>1064,522,1090,542,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of
-FindImagePos>%BMP_DIR%\image_7.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>C:\book of ra\bet200.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
+  Message "current bet x200 grabbed" %Grabbed%
   let>raiseNum=1
 Endif
 
@@ -196,7 +212,7 @@ LClick
 
 Wait>0.75179
 
-//goto>setLines
+goto>start
 
 Label>raiseFixed
 
@@ -256,12 +272,10 @@ Endif
 //Let>raiseNum=raiseNum-1
 
 //place set lines diagonally random shift...
-// dedicated to Bob Marley and Damyan Marley aint shieeeet
+
 goto>start
 
-
-
-
+//dedicated to 2pac Amaru Shakur 
 
 
 
