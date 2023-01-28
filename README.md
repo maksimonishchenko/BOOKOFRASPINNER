@@ -50,8 +50,9 @@ change
 to goto->start
 на goto->start
 
+=========================================================COPY BELOW===========КОПИРОВАТЬ НИЖЕ================================================================
 Label>start
-//продаю exe для вашего windows pc произведу насройку и установку программного обеспечения бота для любых 
+//продаю exe для вашего windows pc произведу настройку и установку программного обеспечения бота для любых 
 //слотовых аппаратов и других компьютерных игр обращаться telegram +79104784319 
 
 //перед запуском скрипта в macro scheduler скопируйте все картинки
@@ -201,7 +202,7 @@ ScreenCapture>1064,522,1090,543,C:\book of ra\screenrect4.bmp
 FindImagePos>C:\book of ra\bet200.bmp,C:\book of ra\screenrect4.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   Message "current bet x200 grabbed" %Grabbed%
-  let>raiseNum=1
+  let>raiseNum=5
 Endif
 
 
