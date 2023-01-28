@@ -82,8 +82,6 @@ Wait>1.75
 
 let>grabbed=0
 
-
-
 ScreenCapture>743,570,946,597,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
 FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
@@ -100,7 +98,6 @@ If>NumFound>0
   let>grabbed=1
   goto>btc
 Endif
-
 
 goto>start
 
@@ -125,14 +122,12 @@ If>NumFound>0
 Endif
 
 
-
-ScreenCapture>1074,523,1090,541,%TEMP_DIR%\screenrect.bmp
+ScreenCapture>1075,520,1090,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
-FindImagePos>%BMP_DIR%\image_12.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
+FindImagePos>%BMP_DIR%\image_14.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   let>raiseNum=7
 Endif
-
 
 ScreenCapture>1062,522,1081,541,%TEMP_DIR%\screenrect.bmp
 //Find and Left Click Center of 
@@ -148,17 +143,23 @@ If>grabbed>0.5
 Endif
 
 Label>resetRaise
+
 MouseMove>949,630
+
 LClick
+
 Wait>0.75179
 
 MouseMove>908,630
+
 LClick
+
 Wait>0.75179
 
 //goto>setLines
 
 Label>raiseFixed
+
 MouseMove>913,630
 
 //Let>raiseNum=raiseNum-1
@@ -196,6 +197,22 @@ If>raiseNum>0
   Wait>0.5179
 Endif
 
+let>raiseNum=raiseNum-1
+
+If>raiseNum>0
+  LClick
+  Wait>0.5179
+Endif
+
+let>raiseNum=raiseNum-1
+
+If>raiseNum>0
+  LClick
+  Wait>0.5179
+Endif
+
+
+
 //Let>raiseNum=raiseNum-1
 
 //place set lines diagonally random shift...
@@ -204,5 +221,5 @@ Endif
 //
 goto>start
 
-//dedicated to author
+
 
