@@ -79,6 +79,7 @@ Wait>0.327
 LClick
 
 Wait>0.5
+
 let>grabbed=0
 
 ScreenCapture>739,569,945,596,%TEMP_DIR%\screenrect.bmp
@@ -95,6 +96,8 @@ FindImagePos>%BMP_DIR%\image_4.bmp,%TEMP_DIR%\screenrect.bmp,0.6,1,XArr,YArr,Num
 If>NumFound>0
   goto>start
 Endif
+
+goto>start
 
 Label>btc
 Wait>3.5179
