@@ -211,13 +211,14 @@ If>NumFound>0
   MouseMove>XArr_0,YArr_0
   LClick
 Endif
-
+//6 1 2 5 lower aggressive
+//1 4 6 1 high aggressive
 ScreenCapture>1062,520,1102,542,C:\book of ra\screenrect10.bmp
 //Find and Left Click Center of 
 FindImagePos>C:\book of ra\image_10.bmp,C:\book of ra\screenrect10.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   //MessageModal "current bet x10 grabbed" %Grabbed%
-  let>raiseNum=6
+  let>raiseNum=1
 Endif
 
 ScreenCapture>1077,522,1105,541,C:\book of ra\screenrect20.bmp
@@ -225,7 +226,7 @@ ScreenCapture>1077,522,1105,541,C:\book of ra\screenrect20.bmp
 FindImagePos>C:\book of ra\image_11.bmp,C:\book of ra\screenrect20.bmp,0.5,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   //Message "current bet x20 grabbed" %Grabbed%
-  let>raiseNum=1
+  let>raiseNum=4
 Endif
 
 ScreenCapture>1077,520,1102,542,C:\book of ra\screenrect50.bmp
@@ -233,7 +234,7 @@ ScreenCapture>1077,520,1102,542,C:\book of ra\screenrect50.bmp
 FindImagePos>C:\book of ra\image_12.bmp,C:\book of ra\screenrect50.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   //MessageModal "current bet x50 grabbed" %Grabbed%
-  let>raiseNum=2
+  let>raiseNum=6
 Endif
 
 ScreenCapture>1060,520,1104,542,C:\book of ra\screenrect200.bmp
@@ -241,7 +242,7 @@ ScreenCapture>1060,520,1104,542,C:\book of ra\screenrect200.bmp
 FindImagePos>C:\book of ra\image_13.bmp,C:\book of ra\screenrect200.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   //MessageModal "current bet x200 grabbed" %Grabbed%
-  let>raiseNum=5
+  let>raiseNum=1
 Endif
 
 
