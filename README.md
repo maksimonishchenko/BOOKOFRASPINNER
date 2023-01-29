@@ -99,9 +99,10 @@ If c==10
   let>c=0
 Endif
 
-GetRectCheckSum>584,578,695,592,clip
+GetRectCheckSum>584,556,695,592,clip
+//Message %clip%
 //check summ credit 9 fields - length empty
-Let>max=147434936
+Let>max=764753173
 
 Let>bool==
 Let>condition=%clip%%bool%%max%
