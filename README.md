@@ -234,7 +234,7 @@ ScreenCapture>1077,520,1102,542,C:\book of ra\screenrect50.bmp
 FindImagePos>C:\book of ra\image_12.bmp,C:\book of ra\screenrect50.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   //MessageModal "current bet x50 grabbed" %Grabbed%
-  let>raiseNum=6
+  let>raiseNum=7
 Endif
 
 ScreenCapture>1060,520,1104,542,C:\book of ra\screenrect200.bmp
