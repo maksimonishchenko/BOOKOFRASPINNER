@@ -182,7 +182,7 @@ Wait>1.75
 
 let>grabbed=0
 
-ScreenCapture>760,578,912,594,C:\book of ra\screenrectwin.bmp
+ScreenCapture>733,570,953,594,C:\book of ra\screenrectwin.bmp
 //Find and Left Click Center of
 FindImagePos>C:\book of ra\win.bmp,C:\book of ra\screenrectwin.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
@@ -192,7 +192,7 @@ Endif
 
 Wait>0.15
 
-ScreenCapture>740,573,952,597,C:\book of ra\screenrectwon.bmp
+ScreenCapture>733,570,953,594,C:\book of ra\screenrectwon.bmp
 //Find and Left Click Center of 
 FindImagePos>C:\book of ra\won.bmp,C:\book of ra\screenrectwon.bmp,0.6,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
@@ -205,6 +205,11 @@ goto>start
 Label>btc
 
 Let>raiseNum=0
+
+If>NumFound>0
+  MouseMove>XArr_0,YArr_0
+  LClick
+Endif
 
 ScreenCapture>1062,520,1102,542,C:\book of ra\screenrect10.bmp
 //Find and Left Click Center of 
