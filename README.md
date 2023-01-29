@@ -212,7 +212,7 @@ If>NumFound>0
   LClick
 Endif
 //6 1 2 5 lower aggressive
-//1 4 6 1 high aggressive
+//1 5 7 1 high aggressive
 ScreenCapture>1062,520,1102,542,C:\book of ra\screenrect10.bmp
 //Find and Left Click Center of 
 FindImagePos>C:\book of ra\image_10.bmp,C:\book of ra\screenrect10.bmp,0.7,1,XArr,YArr,NumFound,CCOEFF
@@ -226,7 +226,7 @@ ScreenCapture>1077,522,1105,541,C:\book of ra\screenrect20.bmp
 FindImagePos>C:\book of ra\image_11.bmp,C:\book of ra\screenrect20.bmp,0.5,1,XArr,YArr,NumFound,CCOEFF
 If>NumFound>0
   //Message "current bet x20 grabbed" %Grabbed%
-  let>raiseNum=4
+  let>raiseNum=5
 Endif
 
 ScreenCapture>1077,520,1102,542,C:\book of ra\screenrect50.bmp
